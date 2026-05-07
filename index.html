@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>NovaPulse</title>
-  <meta name="google-adsense-account" content="ca-pub-5643841764289125">
+  <title>NovaPulse - Free Crypto Trading Simulator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-adsense-account" content="ca-pub-5643841764289125">
+  <meta name="description" content="NovaPulse is a free professional cryptocurrency trading simulator. Practice trading Bitcoin and Ethereum with $10,000 virtual money. No real money needed.">
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#00c853">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
+  </script>
 
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -237,6 +250,17 @@
 
     .affiliate-banner .aff-btn:hover { background: #d4a017; }
 
+    .tip-card {
+      background: #0b0f19;
+      padding: 12px;
+      border-radius: 8px;
+      border-left: 3px solid #00c853;
+      margin-bottom: 10px;
+    }
+
+    .tip-card strong { font-size: 14px; }
+    .tip-card p { color: #9ca3af; font-size: 13px; margin: 4px 0 0; }
+
     @media (max-width: 640px) {
       .sidebar { display: none !important; }
 
@@ -320,12 +344,12 @@
     <div id="loginSection">
       <div class="card" style="max-width:400px;margin:60px auto">
         <h2 style="margin-top:0;color:#00c853">NovaPulse</h2>
-        <p style="color:#9ca3af;margin-top:0">Professional Trading Terminal</p>
+        <p style="color:#9ca3af;margin-top:0">Professional Crypto Trading Simulator — Practice trading Bitcoin and Ethereum with $10,000 virtual money. Free forever.</p>
         <input id="emailInput"    type="email"    placeholder="Email">
         <input id="passwordInput" type="password" placeholder="Password">
         <div id="authError" class="error-msg"></div>
         <button class="btn buy"                                    onclick="login()">Login</button>
-        <button class="btn" style="background:#374151;color:white" onclick="register()">Register</button>
+        <button class="btn" style="background:#374151;color:white" onclick="register()">Register Free</button>
       </div>
     </div>
 
@@ -380,6 +404,32 @@
           <p style="margin:6px 0">ETH: <strong><span id="ethDisplay">0.000000</span></strong></p>
         </div>
       </div>
+
+      <div class="card">
+        <h3 style="color:#00c853">About NovaPulse</h3>
+        <p style="color:#9ca3af;font-size:14px;line-height:1.6">NovaPulse is a free professional cryptocurrency trading simulator. Practice trading Bitcoin (BTC) and Ethereum (ETH) with $10,000 in virtual money — no real money needed. Learn how crypto markets work, test your trading strategies, and compete with other traders on the global leaderboard.</p>
+        <p style="color:#9ca3af;font-size:14px;line-height:1.6">Whether you are a beginner learning about cryptocurrency or an experienced trader testing new strategies, NovaPulse gives you a safe and realistic environment to practice without financial risk.</p>
+      </div>
+
+      <div class="card">
+        <h3 style="color:#00c853">Crypto Trading Tips</h3>
+        <div class="tip-card">
+          <strong>📈 Buy Low, Sell High</strong>
+          <p>The fundamental rule of trading. Monitor price trends and buy when prices dip, then sell when they rise.</p>
+        </div>
+        <div class="tip-card">
+          <strong>🔄 Diversify Your Portfolio</strong>
+          <p>Don't put all your money in one coin. Split your investment between Bitcoin and Ethereum to reduce risk.</p>
+        </div>
+        <div class="tip-card">
+          <strong>📊 Study the Charts</strong>
+          <p>Use the live BTC/USDT chart to understand market patterns. Practice identifying support and resistance levels.</p>
+        </div>
+        <div class="tip-card">
+          <strong>⚠️ Manage Your Risk</strong>
+          <p>Never invest more than you can afford to lose. Use NovaPulse to practice risk management before trading real money.</p>
+        </div>
+      </div>
     </div>
 
     <!-- TRADE -->
@@ -394,7 +444,8 @@
         </a>
       </div>
       <div class="card">
-        <h3>Trade</h3>
+        <h3>Trade Cryptocurrency</h3>
+        <p style="color:#9ca3af;font-size:13px;margin-bottom:12px">Practice buying and selling Bitcoin and Ethereum with your virtual $10,000 balance. Enter a USD amount and tap Buy or Sell to execute your trade instantly at the live market price.</p>
         <label style="color:#9ca3af;font-size:13px">Select coin</label>
         <select id="coinSelect">
           <option value="btc">Bitcoin (BTC)</option>
@@ -430,6 +481,16 @@
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <div class="card">
+        <h3 style="color:#00c853">About Cryptocurrency Markets</h3>
+        <p style="color:#9ca3af;font-size:14px;line-height:1.6">Cryptocurrency markets operate 24 hours a day, 7 days a week unlike traditional stock markets. Bitcoin (BTC) is the world's first and largest cryptocurrency by market capitalization. Ethereum (ETH) is the second largest and powers thousands of decentralized applications.</p>
+        <p style="color:#9ca3af;font-size:14px;line-height:1.6">Crypto prices are highly volatile and can change rapidly. This makes cryptocurrency trading both exciting and risky. Use NovaPulse to practice and build your trading skills safely before investing real money.</p>
+        <h3 style="color:#00c853;margin-top:16px">What is Bitcoin?</h3>
+        <p style="color:#9ca3af;font-size:14px;line-height:1.6">Bitcoin (BTC) was created in 2009 by an anonymous person known as Satoshi Nakamoto. It is a decentralized digital currency that operates without a central bank or government. Bitcoin transactions are verified by a network of computers and recorded on a public ledger called the blockchain.</p>
+        <h3 style="color:#00c853;margin-top:16px">What is Ethereum?</h3>
+        <p style="color:#9ca3af;font-size:14px;line-height:1.6">Ethereum (ETH) is a decentralized platform launched in 2015 that enables developers to build and deploy smart contracts and decentralized applications. Ether is the native cryptocurrency of the Ethereum network and is used to pay for transactions and computational services.</p>
       </div>
     </div>
 
@@ -477,7 +538,13 @@
     <div id="leaderboardSection" class="section">
       <div class="card">
         <h3>Leaderboard</h3>
+        <p style="color:#9ca3af;font-size:13px;margin-bottom:12px">Top traders ranked by total portfolio value. Can you reach #1?</p>
         <ul id="leaderboardList"></ul>
+      </div>
+      <div class="card">
+        <h3 style="color:#00c853">How to Climb the Leaderboard</h3>
+        <p style="color:#9ca3af;font-size:14px;line-height:1.6">Every new user starts with $10,000 in virtual USD. Your goal is to grow this amount by buying and selling Bitcoin and Ethereum at the right times. The trader with the highest total portfolio value — including cash and crypto holdings — tops the leaderboard.</p>
+        <p style="color:#9ca3af;font-size:14px;line-height:1.6">Study the live price charts, time your trades carefully, and manage your risk wisely. The leaderboard updates in real time so you can always track your ranking against other traders from around the world.</p>
       </div>
     </div>
 

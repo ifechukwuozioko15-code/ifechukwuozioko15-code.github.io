@@ -6,6 +6,11 @@
   <meta name="google-adsense-account" content="ca-pub-5643841764289125">
   <meta name="description" content="NovaPulse is a free professional cryptocurrency trading simulator. Practice trading Bitcoin and Ethereum with $10,000 virtual money. No real money needed.">
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
   <!-- PWA -->
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#00c853">
@@ -170,7 +175,6 @@
 
     .section { display: none; }
     .section.active { display: block; }
-    #loginSection { display: block; }
     #sidebarNav   { display: none; }
 
     #chatMessages {
@@ -339,7 +343,7 @@
       line-height: 1.7;
     }
     .policy-content ul { padding-left: 20px; }
-    .policy-content .back-btn {
+    .back-btn {
       background: #1f2937;
       color: white;
       border: none;
@@ -349,7 +353,297 @@
       font-size: 14px;
       margin-bottom: 16px;
     }
-    .policy-content .back-btn:hover { background: #374151; }
+    .back-btn:hover { background: #374151; }
+
+    /* ===================================================
+       LANDING PAGE
+       =================================================== */
+    #landingSection {
+      background: #0b0f19;
+      color: white;
+      min-height: 100vh;
+    }
+
+    .landing-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+      border-bottom: 1px solid #1f2937;
+    }
+
+    .landing-nav .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: #00c853;
+      letter-spacing: -0.5px;
+    }
+
+    .landing-nav .nav-login-btn {
+      background: transparent;
+      border: 1px solid #374151;
+      color: #e5e7eb;
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Ticker */
+    .ticker-wrap {
+      background: #111827;
+      border-bottom: 1px solid #1f2937;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 9px 0;
+    }
+
+    .ticker-track {
+      display: inline-block;
+      white-space: nowrap;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #9ca3af;
+      animation: ticker-scroll 28s linear infinite;
+      padding-left: 100%;
+    }
+
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .ticker-track .tk-up   { color: #00c853; font-weight: 600; }
+    .ticker-track .tk-sep  { color: #374151; margin: 0 22px; }
+
+    /* Hero */
+    .hero {
+      padding: 48px 24px 36px;
+      max-width: 760px;
+    }
+
+    .hero .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #00c853;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 34px;
+      line-height: 1.2;
+      margin: 0 0 16px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p.lead {
+      font-size: 15px;
+      color: #9ca3af;
+      line-height: 1.75;
+      max-width: 540px;
+      margin-bottom: 26px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-ctas .btn-primary {
+      background: #00c853;
+      color: #0b0f19;
+      border: none;
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .hero-ctas .btn-secondary {
+      background: transparent;
+      border: 1px solid #374151;
+      color: #e5e7eb;
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Feature grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid #1f2937;
+      border-bottom: 1px solid #1f2937;
+    }
+
+    .feature-cell {
+      padding: 24px 20px;
+      border-right: 1px solid #1f2937;
+    }
+
+    .feature-cell:last-child { border-right: none; }
+
+    .feature-cell .num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 26px;
+      font-weight: 700;
+      color: #00c853;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .feature-cell .label {
+      font-size: 12.5px;
+      color: #9ca3af;
+      line-height: 1.5;
+    }
+
+    /* Generic landing sections */
+    .landing-section {
+      padding: 44px 24px;
+      max-width: 760px;
+    }
+
+    .landing-section.bordered { border-top: 1px solid #1f2937; }
+
+    .landing-section .section-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #6b7280;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .landing-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      margin: 0 0 16px;
+      font-weight: 700;
+    }
+
+    .landing-section h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      color: #e5e7eb;
+      margin: 28px 0 8px;
+      font-weight: 700;
+    }
+
+    .landing-section h3:first-of-type { margin-top: 0; }
+
+    .landing-section p {
+      color: #9ca3af;
+      font-size: 14px;
+      line-height: 1.8;
+      margin: 0 0 14px;
+    }
+
+    /* How it works steps */
+    .steps { margin-top: 8px; }
+
+    .step {
+      display: flex;
+      gap: 18px;
+      padding: 22px 0;
+      border-top: 1px solid #1f2937;
+    }
+
+    .step:first-child { border-top: none; padding-top: 4px; }
+
+    .step .step-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #00c853;
+      min-width: 34px;
+      padding-top: 3px;
+    }
+
+    .step .step-body h4 {
+      margin: 0 0 6px;
+      font-size: 15px;
+      color: #e5e7eb;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .step .step-body p { margin: 0; }
+
+    /* FAQ accordion */
+    .faq-item { border-top: 1px solid #1f2937; }
+    .faq-item:last-child { border-bottom: 1px solid #1f2937; }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: #e5e7eb;
+      text-align: left;
+      padding: 16px 0;
+      font-size: 14.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-family: inherit;
+    }
+
+    .faq-question .plus {
+      color: #00c853;
+      font-size: 20px;
+      font-family: 'JetBrains Mono', monospace;
+      transition: transform 0.15s ease;
+      flex-shrink: 0;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 0 18px;
+      color: #9ca3af;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .plus { transform: rotate(45deg); }
+
+    /* Final CTA */
+    .final-cta {
+      text-align: center;
+      padding: 52px 24px 60px;
+      border-top: 1px solid #1f2937;
+    }
+
+    .final-cta h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      margin: 0 0 10px;
+    }
+
+    .final-cta p {
+      color: #9ca3af;
+      font-size: 14px;
+      margin: 0 0 22px;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 26px; }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .feature-cell:nth-child(2) { border-right: none; }
+      .feature-cell { border-bottom: 1px solid #1f2937; }
+      .feature-cell:nth-last-child(-n+2) { border-bottom: none; }
+    }
 
     @media (max-width: 640px) {
       .sidebar { display: none !important; }
@@ -422,7 +716,173 @@
   </div>
 </div>
 
-<div class="app-shell">
+<!-- ===== PUBLIC LANDING PAGE ===== -->
+<div id="landingSection">
+
+  <nav class="landing-nav">
+    <div class="logo">NovaPulse</div>
+    <button class="nav-login-btn" onclick="showLoginScreen()">Log In</button>
+  </nav>
+
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span class="tk-up">₿ BTC <span id="tickerBtc">loading…</span></span>
+      <span class="tk-sep">•</span>
+      <span class="tk-up">Ξ ETH <span id="tickerEth">loading…</span></span>
+      <span class="tk-sep">•</span>
+      $10,000 VIRTUAL STARTING BALANCE
+      <span class="tk-sep">•</span>
+      ZERO REAL-MONEY RISK
+      <span class="tk-sep">•</span>
+      LIVE PRICES FROM COINGECKO, REFRESHED EVERY 30 SECONDS
+      <span class="tk-sep">•</span>
+      GLOBAL LEADERBOARD — CAN YOU REACH #1?
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="eyebrow">Free Trading Simulator · No Card Required</div>
+    <h1>Trade Bitcoin and Ethereum at real market prices — with money that isn't.</h1>
+    <p class="lead">NovaPulse gives every new trader a virtual $10,000 balance and mirrors live BTC and ETH prices from the real market. Buy low, sell high, build a strategy, and climb the leaderboard — without ever touching a real wallet, card, or exchange account.</p>
+    <div class="hero-ctas">
+      <button class="btn-primary" onclick="showLoginScreen()">Start Trading Free</button>
+      <button class="btn-secondary" onclick="showLoginScreen()">I already have an account</button>
+    </div>
+  </section>
+
+  <div class="feature-grid">
+    <div class="feature-cell">
+      <span class="num">$10,000</span>
+      <div class="label">Virtual balance credited to your account the moment you register</div>
+    </div>
+    <div class="feature-cell">
+      <span class="num">Live</span>
+      <div class="label">BTC and ETH prices pulled from CoinGecko, refreshed every 30 seconds</div>
+    </div>
+    <div class="feature-cell">
+      <span class="num">$0</span>
+      <div class="label">Real money ever required, deposited, or at risk — ever</div>
+    </div>
+    <div class="feature-cell">
+      <span class="num">24/7</span>
+      <div class="label">Markets never close, so you can practice trading any time</div>
+    </div>
+  </div>
+
+  <section class="landing-section bordered">
+    <div class="section-eyebrow">How It Works</div>
+    <h2>From zero to your first trade in under a minute</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h4>Create a free account</h4>
+          <p>Register with just an email address and a password. There's no identity verification, no wallet connection, and no payment details — NovaPulse never asks for them.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h4>Receive your $10,000 virtual balance</h4>
+          <p>As soon as your account is created, your simulated wallet is funded with ten thousand virtual US dollars. This balance exists only inside NovaPulse and has no connection to real currency.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h4>Buy and sell at live market prices</h4>
+          <p>Every trade you place uses the same Bitcoin and Ethereum prices that real exchanges use, pulled from CoinGecko. Enter a USD amount, choose buy or sell, and your virtual portfolio updates instantly.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <h4>Track your rank on the leaderboard</h4>
+          <p>Every trader's total portfolio value — cash plus crypto holdings — is ranked in real time. Compare your strategy against traders from around the world and see how your decisions stack up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-section bordered">
+    <div class="section-eyebrow">Learn</div>
+    <h2>Why practice before you risk real money</h2>
+    <p>Cryptocurrency markets move fast. Bitcoin and Ethereum can swing by double-digit percentages in a single day, and those swings can wipe out a poorly-sized position before a new trader even understands what happened. A trading simulator removes the financial consequence from that learning curve — you can make the mistakes that everyone makes when they start, and recognize the patterns, without losing rent money in the process.</p>
+    <p>NovaPulse is built around one idea: the prices should be real, but the stakes shouldn't be. By tying your virtual portfolio to live market data, every decision you make — when to buy, how much to commit, when to take profit or cut a loss — behaves exactly like it would with real funds. The only difference is that a bad week here costs you nothing.</p>
+
+    <h3>What is Bitcoin?</h3>
+    <p>Bitcoin (BTC) is the first cryptocurrency, created in 2009 by an anonymous developer known as Satoshi Nakamoto. It runs on a decentralized network of computers that verify and record transactions on a public ledger called the blockchain, without need for a bank or central authority. Bitcoin is often described as "digital gold" because of its fixed supply — only 21 million BTC will ever exist — which is a major reason its price is closely watched by traders worldwide.</p>
+
+    <h3>What is Ethereum?</h3>
+    <p>Ethereum (ETH) launched in 2015 as a platform that goes beyond simple payments. It allows developers to build "smart contracts" — self-executing pieces of code — and decentralized applications that run on its network. Ether, the platform's native currency, is used to pay for these transactions and computations. Because Ethereum powers such a wide range of applications, from finance to digital collectibles, its price often reacts to developments across the broader crypto industry, not just its own network.</p>
+
+    <h3>Common mistakes first-time traders make</h3>
+    <p>New traders tend to repeat a small set of mistakes, and a simulator is the cheapest place to make them. Putting an entire balance into a single coin removes any room to recover from a bad call. Buying right after a sharp price spike — chasing a move that has already happened — often means buying at the worst possible moment. Reacting emotionally to red numbers, by panic-selling during a dip, frequently locks in a loss that would have recovered given time. And perhaps the most common mistake of all is trading without a plan: entering a position with no idea of when you'll exit, whether the price rises or falls.</p>
+    <p>NovaPulse won't stop you from making any of these mistakes — but it will let you make them, see the result, and adjust your approach before any of it matters with real money.</p>
+  </section>
+
+  <section class="landing-section bordered">
+    <div class="section-eyebrow">FAQ</div>
+    <h2>Frequently asked questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Is NovaPulse really free? <span class="plus">+</span></button>
+      <div class="faq-answer">Yes. Registration is free, your starting $10,000 virtual balance is free, and there is no subscription, premium tier, or hidden fee. NovaPulse is supported by advertising shown on the site.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Do I need a crypto wallet or a bank card? <span class="plus">+</span></button>
+      <div class="faq-answer">No. NovaPulse never asks for a card number, bank details, or a crypto wallet address. The only thing required to create an account is an email address and a password.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Are the Bitcoin and Ethereum prices real? <span class="plus">+</span></button>
+      <div class="faq-answer">Yes. Prices are pulled live from CoinGecko's public market data and refreshed every 30 seconds, so the price you trade at on NovaPulse matches the real market price at that moment.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Can I lose real money on NovaPulse? <span class="plus">+</span></button>
+      <div class="faq-answer">No. Your entire balance — the starting $10,000 and anything you "earn" or "lose" through trading — is virtual. None of it is connected to a real bank account, card, or wallet, so there is no real-money risk at any point.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Can I withdraw or cash out my virtual balance? <span class="plus">+</span></button>
+      <div class="faq-answer">No. Virtual USD, BTC, and ETH balances exist only within NovaPulse for practice purposes and cannot be withdrawn, transferred, or exchanged for real money or real cryptocurrency under any circumstances.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">How is the leaderboard ranking calculated? <span class="plus">+</span></button>
+      <div class="faq-answer">Your rank is based on your total portfolio value — your remaining virtual USD plus the current market value of any BTC and ETH you're holding, calculated using live prices. The leaderboard updates in real time as prices and balances change.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Is my email address and data safe? <span class="plus">+</span></button>
+      <div class="faq-answer">Account authentication is handled through Firebase, and your data is used only to operate the simulator, maintain your portfolio, and show you relevant ads. Full details are in our Privacy Policy, linked below.</div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <h2>Ready to make your first trade?</h2>
+    <p>Create a free account and your $10,000 virtual balance is ready instantly — no card, no wallet, no risk.</p>
+    <button class="btn-primary" onclick="showLoginScreen()">Create Free Account</button>
+  </section>
+
+  <footer class="site-footer" style="display:block">
+    <div class="disclaimer-box" style="max-width:700px;margin:0 auto 12px">
+      ⚠️ <strong style="color:#e5e7eb">Disclaimer:</strong> NovaPulse is a cryptocurrency trading simulator for educational purposes only. All balances are virtual. This is not financial advice. Cryptocurrency trading carries significant risk. Never invest money you cannot afford to lose.
+    </div>
+    <div class="footer-links">
+      <a href="#" onclick="showPolicyPage('privacy'); return false;">Privacy Policy</a>
+      <a href="#" onclick="showPolicyPage('terms'); return false;">Terms of Service</a>
+      <a href="mailto:support@novapulse.app">Contact Us</a>
+    </div>
+    <p style="margin:0;font-size:12px">© 2025 NovaPulse. All rights reserved. | For educational use only. Not financial advice.</p>
+    <p style="margin:4px 0 0;font-size:11px;color:#4b5563">Advertisements on this site are served by Google AdSense. Affiliate links are marked as sponsored.</p>
+  </footer>
+
+</div>
+
+<div class="app-shell" id="appShell" style="display:none">
 
   <div class="sidebar" id="desktopSidebar" style="display:none">
     <h2>NovaPulse</h2>
@@ -446,8 +906,9 @@
     </div>
 
     <!-- LOGIN -->
-    <div id="loginSection">
+    <div id="loginSection" class="section">
       <div class="card" style="max-width:400px;margin:60px auto">
+        <button class="back-btn" onclick="showLanding()" style="margin-bottom:4px">← Back to home</button>
         <h2 style="margin-top:0;color:#00c853">NovaPulse</h2>
         <p style="color:#9ca3af;margin-top:0">Professional Crypto Trading Simulator — Practice trading Bitcoin and Ethereum with $10,000 virtual money. Free forever.</p>
         <div class="disclaimer-box">
@@ -887,11 +1348,38 @@ function handleCookie(accepted) {
 
 initCookieBanner();
 
+// ===== LANDING PAGE NAVIGATION =====
+function showLanding() {
+  document.getElementById('landingSection').style.display = 'block';
+  document.getElementById('appShell').style.display = 'none';
+  window.scrollTo(0, 0);
+}
+
+function showLoginScreen() {
+  document.getElementById('landingSection').style.display = 'none';
+  document.getElementById('appShell').style.display = 'flex';
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('loginSection').classList.add('active');
+  previousSection = 'login';
+  window.scrollTo(0, 0);
+}
+
+function toggleFaq(btn) {
+  btn.parentElement.classList.toggle('open');
+}
+
 // ===== POLICY PAGES =====
 function showPolicyPage(page) {
-  // Remember which section we were on
+  // Remember where we came from so "Back" returns correctly
   const active = document.querySelector('.section.active');
-  if (active) previousSection = active.id.replace('Section', '');
+  if (active) {
+    previousSection = active.id.replace('Section', '');
+  } else if (document.getElementById('landingSection').style.display !== 'none') {
+    previousSection = 'landing';
+  }
+
+  document.getElementById('landingSection').style.display = 'none';
+  document.getElementById('appShell').style.display = 'flex';
 
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.getElementById(page + 'Section').classList.add('active');
@@ -899,6 +1387,10 @@ function showPolicyPage(page) {
 }
 
 function goBack() {
+  if (previousSection === 'landing') {
+    showLanding();
+    return;
+  }
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.getElementById(previousSection + 'Section').classList.add('active');
   window.scrollTo(0, 0);
@@ -967,7 +1459,9 @@ auth.onAuthStateChanged(user => {
     if (listenersActive) return;
     listenersActive = true;
 
-    document.getElementById('loginSection').style.display = 'none';
+    document.getElementById('landingSection').style.display = 'none';
+    document.getElementById('appShell').style.display = 'flex';
+    document.getElementById('loginSection').classList.remove('active');
     document.getElementById('siteFooter').style.display = 'block';
 
     if (isMobile()) {
@@ -1034,7 +1528,9 @@ async function fetchPrices() {
 
 function startPrices() {
   fetchPrices();
-  priceInterval = setInterval(fetchPrices, 30000);
+  if (!priceInterval) {
+    priceInterval = setInterval(fetchPrices, 30000);
+  }
 }
 
 function executeTrade(type) {
@@ -1105,6 +1601,12 @@ function updateUI() {
   document.getElementById('btcValueWallet').textContent = fmt(btcBal * btcVal, 2);
   document.getElementById('ethValueWallet').textContent = fmt(ethBal * ethVal, 2);
   document.getElementById('totalWallet').textContent    = fmt(total, 2);
+
+  // Landing page ticker
+  const tBtc = document.getElementById('tickerBtc');
+  const tEth = document.getElementById('tickerEth');
+  if (tBtc) tBtc.textContent = btcVal > 0 ? '$' + fmt(btcVal, 0) : 'loading…';
+  if (tEth) tEth.textContent = ethVal > 0 ? '$' + fmt(ethVal, 0) : 'loading…';
 }
 
 function setupChat() {
@@ -1193,6 +1695,10 @@ function initChart() {
     autosize: true
   });
 }
+
+// Start the live price ticker immediately so the public landing page
+// shows real BTC/ETH prices even before anyone logs in.
+startPrices();
 </script>
 
 </body>

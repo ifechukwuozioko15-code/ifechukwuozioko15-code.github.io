@@ -31,8 +31,7 @@
   <!-- TradingView -->
   <script src="https://s3.tradingview.com/tv.js"></script>
 
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5643841764289125" crossorigin="anonymous"></script>
+  <!-- AdSense loads dynamically after cookie consent -->
 
   <style>
     * { box-sizing: border-box; }
@@ -643,6 +642,7 @@
       .feature-cell:nth-child(2) { border-right: none; }
       .feature-cell { border-bottom: 1px solid #1f2937; }
       .feature-cell:nth-last-child(-n+2) { border-bottom: none; }
+      .edu-grid { grid-template-columns: 1fr !important; }
     }
 
     @media (max-width: 640px) {
@@ -861,6 +861,93 @@
     </div>
   </section>
 
+  <!-- TRADING STRATEGIES SECTION -->
+  <section class="landing-section bordered">
+    <div class="section-eyebrow">Strategies</div>
+    <h2>📊 3 Proven Trading Strategies to Practice</h2>
+
+    <div style="background:#1f2937; padding:20px; border-radius:12px; margin-bottom:20px;">
+      <h3 style="color:#00c853; margin:0 0 10px;">1. Dollar Cost Averaging (DCA)</h3>
+      <p style="color:#9ca3af; font-size:14px; line-height:1.75; margin:0;">Instead of investing all $10,000 at once, split it into smaller amounts and invest regularly. For example, buy $500 worth of Bitcoin every day for 20 days. This strategy reduces the impact of volatility and removes emotional timing decisions. It is one of the most widely recommended strategies for beginner traders because it takes the pressure off trying to time the market perfectly.</p>
+    </div>
+
+    <div style="background:#1f2937; padding:20px; border-radius:12px; margin-bottom:20px;">
+      <h3 style="color:#f0b90b; margin:0 0 10px;">2. Swing Trading</h3>
+      <p style="color:#9ca3af; font-size:14px; line-height:1.75; margin:0;">Identify market trends using technical analysis. Look for support levels — prices where the market tends to bounce upward — and resistance levels — prices where the market tends to drop. Buy near support and sell near resistance. This strategy works best in sideways or trending markets and typically involves holding a position for days or weeks rather than minutes or hours.</p>
+    </div>
+
+    <div style="background:#1f2937; padding:20px; border-radius:12px; margin-bottom:20px;">
+      <h3 style="color:#00c853; margin:0 0 10px;">3. News-Based Trading</h3>
+      <p style="color:#9ca3af; font-size:14px; line-height:1.75; margin:0;">Cryptocurrency prices react quickly to news. Follow crypto news and social media closely. When positive news hits — such as institutional adoption, regulatory approval, or major company announcements — prices often spike rapidly. When negative news hits — like government bans, exchange hacks, or major fraud — prices often drop sharply. Being aware of the news cycle gives you an edge over traders who only watch price charts.</p>
+    </div>
+
+    <div style="background:#1f2937; padding:20px; border-radius:12px;">
+      <h3 style="color:#f0b90b; margin:0 0 10px;">4. Risk Management — The Strategy Behind All Strategies</h3>
+      <p style="color:#9ca3af; font-size:14px; line-height:1.75; margin:0;">No trading strategy works without proper risk management. Never put more than 10-20% of your total balance into a single trade. Always decide in advance how much loss you are willing to accept before you exit a position. Successful traders are not the ones who win every trade — they are the ones who protect their capital when they lose, so they can keep trading to win another day. Use NovaPulse to practice these rules until they become instinct.</p>
+    </div>
+  </section>
+
+  <!-- PUBLIC AD BANNER - always visible to Google -->
+  <div style="display:block; margin:0 auto; max-width:728px; padding:0 24px 24px;">
+    <div style="background:#111827; border-radius:12px; overflow:hidden; min-height:90px; display:flex; align-items:center; justify-content:center; text-align:center;">
+      <ins class="adsbygoogle"
+        style="display:block;width:100%;min-height:90px;"
+        data-ad-client="ca-pub-5643841764289125"
+        data-ad-slot="5462564878"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    </div>
+  </div>
+
+  <!-- PUBLIC DEMO - visible without login -->
+  <section class="landing-section bordered">
+    <div class="section-eyebrow">Live Demo</div>
+    <h2>🔓 Try the trading demo — no login needed</h2>
+    <p>See real live Bitcoin and Ethereum prices updating every 30 seconds. Sign in to trade with your virtual $10,000 balance.</p>
+
+    <div style="display:flex; gap:16px; margin:20px 0; flex-wrap:wrap;">
+      <div style="background:#1f2937; padding:20px; border-radius:12px; flex:1; min-width:140px; text-align:center;">
+        <div style="color:#9ca3af; font-size:12px; margin-bottom:8px; font-family:'JetBrains Mono',monospace; letter-spacing:2px;">BTC / USD</div>
+        <div style="color:#00c853; font-size:28px; font-weight:700; font-family:'JetBrains Mono',monospace;" id="btcPriceDemo">Loading...</div>
+      </div>
+      <div style="background:#1f2937; padding:20px; border-radius:12px; flex:1; min-width:140px; text-align:center;">
+        <div style="color:#9ca3af; font-size:12px; margin-bottom:8px; font-family:'JetBrains Mono',monospace; letter-spacing:2px;">ETH / USD</div>
+        <div style="color:#00c853; font-size:28px; font-weight:700; font-family:'JetBrains Mono',monospace;" id="ethPriceDemo">Loading...</div>
+      </div>
+    </div>
+
+    <div style="opacity:0.5; pointer-events:none; margin-top:16px;">
+      <input type="text" placeholder="Login to trade BTC or ETH" disabled style="width:100%; padding:12px; background:#0b0f19; border:1px solid #374151; border-radius:8px; color:white; font-size:14px; box-sizing:border-box;">
+      <button style="width:100%; padding:13px; margin-top:8px; border-radius:8px; border:none; background:#00c853; color:#0b0f19; font-size:15px; font-weight:bold;">Sign In to Buy</button>
+    </div>
+    <p style="color:#6b7280; font-size:12px; margin-top:14px;">💡 <a href="#" onclick="showLoginScreen(); return false;" style="color:#00c853;">Create a free account</a> to start trading with $10,000 virtual money — no card needed.</p>
+  </section>
+
+  <!-- EXTRA UNIQUE CONTENT SECTION -->
+  <section class="landing-section bordered">
+    <div class="section-eyebrow">Education</div>
+    <h2>📚 Learn crypto trading the right way</h2>
+
+    <div class="edu-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+      <div style="background:#111827; padding:20px; border-radius:12px; border-left:3px solid #00c853;">
+        <h3 style="color:white; margin:0 0 10px; font-size:15px;">What Makes Crypto Prices Move?</h3>
+        <p style="color:#9ca3af; font-size:13px; line-height:1.7; margin:0;">Cryptocurrency prices are driven by supply and demand, market sentiment, regulatory news, and technology developments. Unlike stock markets, crypto trades 24 hours a day 7 days a week, creating more opportunities and more risk for traders.</p>
+      </div>
+      <div style="background:#111827; padding:20px; border-radius:12px; border-left:3px solid #f0b90b;">
+        <h3 style="color:white; margin:0 0 10px; font-size:15px;">5 Strategies Every Beginner Should Know</h3>
+        <p style="color:#9ca3af; font-size:13px; line-height:1.7; margin:0;">1. Buy and Hold — long term faith in the asset<br>2. Dollar Cost Averaging — regular small investments<br>3. Swing Trading — catching medium term trends<br>4. Scalping — quick small profits<br>5. Arbitrage — price differences between exchanges</p>
+      </div>
+      <div style="background:#111827; padding:20px; border-radius:12px; border-left:3px solid #00c853;">
+        <h3 style="color:white; margin:0 0 10px; font-size:15px;">Why Practice Matters Before Real Money</h3>
+        <p style="color:#9ca3af; font-size:13px; line-height:1.7; margin:0;">The biggest mistake new traders make is learning with real money. NovaPulse lets you make all the beginner mistakes — without financial pain. Practice risk management, timing, and strategy until you are confident enough to trade real markets.</p>
+      </div>
+      <div style="background:#111827; padding:20px; border-radius:12px; border-left:3px solid #f0b90b;">
+        <h3 style="color:white; margin:0 0 10px; font-size:15px;">Understanding Market Indicators</h3>
+        <p style="color:#9ca3af; font-size:13px; line-height:1.7; margin:0;">RSI shows if an asset is overbought or oversold. Moving averages smooth price data to identify trends. Volume confirms the strength of price movements. These are the three most important tools every serious trader learns first.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="final-cta">
     <h2>Ready to make your first trade?</h2>
     <p>Create a free account and your $10,000 virtual balance is ready instantly — no card, no wallet, no risk.</p>
@@ -876,7 +963,7 @@
       <a href="#" onclick="showPolicyPage('terms'); return false;">Terms of Service</a>
       <a href="mailto:support@novapulse.app">Contact Us</a>
     </div>
-    <p style="margin:0;font-size:12px">© 2025 NovaPulse. All rights reserved. | For educational use only. Not financial advice.</p>
+    <p style="margin:0;font-size:12px">© 2026 NovaPulse. All rights reserved. | For educational use only. Not financial advice.</p>
     <p style="margin:4px 0 0;font-size:11px;color:#4b5563">Advertisements on this site are served by Google AdSense. Affiliate links are marked as sponsored.</p>
   </footer>
 
@@ -942,26 +1029,11 @@
 
       <div class="ad-banner">
         <ins class="adsbygoogle"
-          style="display:block;width:100%;height:90px"
+          style="display:block;width:100%;min-height:90px;"
           data-ad-client="ca-pub-5643841764289125"
           data-ad-slot="2727891250"
-          data-ad-format="horizontal"
+          data-ad-format="auto"
           data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-
-      <!-- Adsterra Banner Ad -->
-      <div class="ad-banner">
-        <script type="text/javascript">
-          atOptions = {
-            'key' : '8f444cdeb0fd853f4323e615ada4d10a',
-            'format' : 'iframe',
-            'height' : 250,
-            'width' : 300,
-            'params' : {}
-          };
-        </script>
-        <script type="text/javascript" src="//www.highperformanceformat.com/8f444cdeb0fd853f4323e615ada4d10a/invoke.js"></script>
       </div>
 
       <div class="topbar">
@@ -1148,7 +1220,7 @@
       <div class="card policy-content">
         <button class="back-btn" onclick="goBack()">← Back</button>
         <h1>Privacy Policy</h1>
-        <p><strong style="color:#e5e7eb">Last updated: January 2025</strong></p>
+        <p><strong style="color:#e5e7eb">Last updated: July 2026</strong></p>
         <p>NovaPulse ("we", "our", or "us") operates the NovaPulse cryptocurrency trading simulator. This Privacy Policy explains how we collect, use, and protect your information when you use our service.</p>
 
         <h2>1. Information We Collect</h2>
@@ -1217,7 +1289,7 @@
       <div class="card policy-content">
         <button class="back-btn" onclick="goBack()">← Back</button>
         <h1>Terms of Service</h1>
-        <p><strong style="color:#e5e7eb">Last updated: January 2025</strong></p>
+        <p><strong style="color:#e5e7eb">Last updated: July 2026</strong></p>
         <p>Welcome to NovaPulse. By accessing or using our platform, you agree to be bound by these Terms of Service. Please read them carefully.</p>
 
         <h2>1. About NovaPulse</h2>
@@ -1281,7 +1353,7 @@
         <a href="#" onclick="showPolicyPage('terms'); return false;">Terms of Service</a>
         <a href="mailto:support@novapulse.app">Contact Us</a>
       </div>
-      <p style="margin:0;font-size:12px">© 2025 NovaPulse. All rights reserved. | For educational use only. Not financial advice.</p>
+      <p style="margin:0;font-size:12px">© 2026 NovaPulse. All rights reserved. | For educational use only. Not financial advice.</p>
       <p style="margin:4px 0 0;font-size:11px;color:#4b5563">Advertisements on this site are served by Google AdSense. Affiliate links are marked as sponsored.</p>
     </footer>
 
@@ -1336,14 +1408,47 @@ function isMobile() { return window.innerWidth <= 640; }
 
 // ===== COOKIE CONSENT =====
 function initCookieBanner() {
-  if (!localStorage.getItem('cookieConsent')) {
+  const consent = localStorage.getItem('cookieConsent');
+  if (!consent) {
     document.getElementById('cookieBanner').style.display = 'flex';
+  } else if (consent === 'accepted') {
+    loadAdSense();
   }
+}
+
+function loadAdSense() {
+  if (document.getElementById('adsenseScript')) return;
+  const script = document.createElement('script');
+  script.id = 'adsenseScript';
+  script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5643841764289125';
+  script.async = true;
+  script.crossOrigin = 'anonymous';
+  document.head.appendChild(script);
+  setTimeout(() => {
+    try {
+      // Fix 2: Push each ad individually, not all at once
+      document.querySelectorAll('.adsbygoogle').forEach(ad => {
+        try {
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        } catch(e) {
+          console.log('Ad initialization error:', e);
+        }
+      });
+      // Fix 5: Enable auto ads for better revenue
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: 'ca-pub-5643841764289125',
+        enable_page_level_ads: true
+      });
+    } catch(e) {
+      console.log('AdSense load error:', e);
+    }
+  }, 1500);
 }
 
 function handleCookie(accepted) {
   localStorage.setItem('cookieConsent', accepted ? 'accepted' : 'declined');
   document.getElementById('cookieBanner').style.display = 'none';
+  if (accepted) loadAdSense();
 }
 
 initCookieBanner();
@@ -1580,8 +1685,24 @@ function executeTrade(type) {
 }
 
 function updateUI() {
-  const total = usdBal + btcBal * btcVal + ethBal * ethVal;
   const fmt = (n, d) => n.toLocaleString(undefined, { minimumFractionDigits: d, maximumFractionDigits: d });
+
+  // Always update public demo prices (visible without login)
+  const dBtc = document.getElementById('btcPriceDemo');
+  const dEth = document.getElementById('ethPriceDemo');
+  if (dBtc) dBtc.textContent = btcVal > 0 ? '$' + fmt(btcVal, 0) : 'Loading...';
+  if (dEth) dEth.textContent = ethVal > 0 ? '$' + fmt(ethVal, 0) : 'Loading...';
+
+  // Landing page ticker
+  const tBtc = document.getElementById('tickerBtc');
+  const tEth = document.getElementById('tickerEth');
+  if (tBtc) tBtc.textContent = btcVal > 0 ? '$' + fmt(btcVal, 0) : 'loading…';
+  if (tEth) tEth.textContent = ethVal > 0 ? '$' + fmt(ethVal, 0) : 'loading…';
+
+  // Only update logged-in UI if user is authenticated
+  if (!auth.currentUser) return;
+
+  const total = usdBal + btcBal * btcVal + ethBal * ethVal;
 
   document.getElementById('totalDisplay').textContent    = '$' + fmt(total, 2);
   document.getElementById('usdDisplay').textContent      = '$' + fmt(usdBal, 2);
@@ -1601,12 +1722,6 @@ function updateUI() {
   document.getElementById('btcValueWallet').textContent = fmt(btcBal * btcVal, 2);
   document.getElementById('ethValueWallet').textContent = fmt(ethBal * ethVal, 2);
   document.getElementById('totalWallet').textContent    = fmt(total, 2);
-
-  // Landing page ticker
-  const tBtc = document.getElementById('tickerBtc');
-  const tEth = document.getElementById('tickerEth');
-  if (tBtc) tBtc.textContent = btcVal > 0 ? '$' + fmt(btcVal, 0) : 'loading…';
-  if (tEth) tEth.textContent = ethVal > 0 ? '$' + fmt(ethVal, 0) : 'loading…';
 }
 
 function setupChat() {
